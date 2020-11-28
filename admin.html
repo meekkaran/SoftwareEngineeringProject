@@ -39,12 +39,40 @@
     </header>
 
     <mainmenu>
-        <div class="center">
-            <ul>
-                <li><a href="sth.html">Reported cases</a></li>
-                <li><a href="sth.html">Progress cases</a></li>
-                <li><a href="sth.html">Solved cases</a></li>
-            </ul>
+        <div class="container">
+            <div class ="center">
+                <p><a href="reportAdmin.html">Reported cases</a></p>
+                    <form>
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter Case ID" name="enter">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter Station to assign to" name="enter">
+                    </div>
+                    <h3>Has the case been solved?</h3>
+                    <div class=input-group>
+                        <label>Yes</label>
+                        <input type="radio" name="" value="yes">
+                        <label>No</label>
+                        <input type="radio" name="" value="no">
+                    </div>
+                    <div class="input-group">
+                        <label>Brief Description About The Incident</label></br>
+                        <textarea type="text" name="descrbe" class="describe" rows="10" cols="54"></textarea>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" name="submit" class="btn">SUBMIT</button>
+                    </div>
+                    </form>
+            </div>
+            
+            <div class="center1">
+                <p><a href="sth.html">Progress cases</a></p>
+            </div>
+
+            <div class="center2">
+                <p><a href="sth.html">Solved cases</a></p>
+            </div>
         </div>
     </mainmenu>
 </body>

@@ -84,23 +84,37 @@ body{
 .menubar ul li:hover ul li{
     display: block;
 }
-.center{
-    float:right;
-    top:40%;
-    position: absolute;
-    left:42%;
+
+/*center*/
+.container{
+    width:100%;
+    height:auto;
+    display:inline-block;
 }
-.center ul{
-    list-style-type: none;
-}
-.center ul li{
-    display: inline-block;
-    padding: 12px;
-}
-.center ul li a{
+.container a{
     text-decoration: none;
+    list-style-type: none;
     background-color: maroon;
     color:white;
     padding:10px;
     border: 1px solid black;
+}
+.center{
+    width:50%;
+    height:auto;
+    float:left;
+    margin-left: 19%;
+}
+
+.center1{
+    width:15%;
+    height:auto;
+    float:left;
+    margin-left:
+}
+.center2{
+    width:12%;
+    height:auto;
+    float:left;
+    margin-left:
 }
