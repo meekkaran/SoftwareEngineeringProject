@@ -152,6 +152,71 @@
         <div class="container" style="background-color:#f1f1f1">
             <span class="account">Don't have an account? <a href="sign.html">SignUp</a></span>
         </div>
+    
+
+
+
+        <!---------PHP CODES------->
+        <?php
+    //INITIALIZING lOGIN FORM
+      $userName=" ";
+      $userEmail=" ";
+      $address=" ";
+      $mobileNumber=" ";
+      $password=" ";
+
+
+        //CREATING CONNECTION
+      $db = "crimes";
+    $conn = new mysqli("localhost","root"," ", "crimes");
+
+     // CHECKING CONNECTION
+    if ($conn->connect_error){
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    //CONVERTING HTML TO PHP
+    if(isset($_POST['submit'])){
+        $userName = $_POST['userName'];
+        $userEmail = $_POST['userEmail'];
+        $address = $_POST['address'];
+        $mobileNumber = $_POST['mobileNumber'];
+        $password = $_POST['password'];
+    }
+
+    //ensuring that data is valid....error handling logic gate
+    if(empty($userName)){
+        echo '<script>alert("A Name is required")</script>';
+    }
+    else if(empty($userEmail)){
+        echo '<script>alert("email is required")</script>';
+    }
+    else if(empty($address)){
+        echo '<script>alert("your address is required")</script>';
+    }
+    else if(empty($mobileNumber)){
+        echo '<script>alert("phone number is required")</script>';
+    }
+    else if(empty($password)){
+        echo '<script>alert("password is required")</script>';
+    }
+
+    //If data is clean then we feed it to the DB
+    else{
+        $sql = "INSERT INTO user(userName, userEmail,address,mobileNumber,password)
+                VALUES('$userName', '$userEmail','$address','mobileNumber','$password')";
+    }
+    //Feedback if data has been inserted
+    if(isset($_POST['submit'])){
+        if(mysqli_query($conn, $sql)){
+            echo '<script>alert("login successfull")</script>';
+        }
+        else{
+            echo '<script>alert("dont have an account signup")</script>';
+        }
+    }
+
+    ?>
     </form>
 
 </body>

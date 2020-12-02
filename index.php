@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
                 <img src="./img/cuff.png">
                 <h1><span class="highlight">Report </span>Crimes</h1>
                 <ul>
-                    <li id="first"><a href="report.html">Report Criminal Content</a><i class="fa fa-angle-right"></i></li>
+                    <li id="first"><a href="report.php">Report Criminal Content</a><i class="fa fa-angle-right"></i></li>
 
                     <li id="second"><a href="fnfn.html">Support</a><i class="fa fa-angle-right"></i></li>
                 </ul>
@@ -30,7 +31,7 @@
                 <li><a href="index.html">Our services</a></li>
                 <li><i class="fa fa-user"></i><a href="index.html">Login<i class="fa fa-angle-down"></i></a>
                     <ul>
-                        <li><a href="login1.html">LOGIN</a></li>
+                        <li><a href="login1.php">LOGIN</a></li>
                     </ul>
                 </li>
                 <form class="example" action="/action_page.php" style="margin:auto;max-width:300px;color:brown;">
@@ -96,21 +97,24 @@
 
 
     <footer>
-        <div class="newsletter">
-            <h4>Sign up to our newsletter</h4>
-            <div class="input-group">
-                <label>YOUR NAME</label>
-                <input type="text" name="">
+        <form method="POST">
+            <div class="newsletter">
+                <h4>Sign up to our newsletter</h4>
+                <div class="input-group">
+                    <label>YOUR NAME</label>
+                    <input type="text" name="newName">
+
+                </div>
+                <div class="input-group">
+                    <label>YOUR EMAIL</label>
+                    <input type="text" name="newEmail">
+                </div>
+                <div class="input-group">
+                    <button type="submit" name="submit" class="btn">SUBSCRIBE</button>
+                </div>
+                <p>You can unsubscribe at any time using the link at the bottom of newsletter emails or you can contact us directly </P>
             </div>
-            <div class="input-group">
-                <label>YOUR EMAIL</label>
-                <input type="text" name="">
-            </div>
-            <div class="input-group">
-                <button type="submit" name="submit" class="btn">SUBSCRIBE</button>
-            </div>
-            <p>You can unsubscribe at any time using the link at the bottom of newsletter emails or you can contact us directly </P>
-        </div>
+        </form>
 
         <div class="part2">
             <ul>
@@ -137,6 +141,54 @@
     </div>
 
     <script src="app.js"></script>
+
+
+<!-----------THIS IS THE PHP PART WHICH FEEDS USER DATA TO THE DB____------->
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "crimes";
+    //Initializing newsletter data
+    $newName = " ";
+    $newEmail = " ";
+
+
+    //creating connection
+    $conn = new mysqli($servername, $username, $password, $db);
+    // To Check Connection
+    if ($conn->connect_error){
+        die("Connection failed: " . $conn->connect_error);
+    }
+    //converting html input data to php variables
+    if(isset($_POST['submit'])){
+        $newName = $_POST['newName'];
+        $newEmail = $_POST['newEmail'];
+
+    //ensuring that data is valid....error handling logic gate
+    if(empty($newName)){
+        echo '<script>alert("A Name is required")</script>';
+    }
+    else if(empty($newEmail)){
+        echo '<script>alert("Email is required")</script>';
+    }
+    //If data is clean then we feed it to the DB
+    else{
+        $sql = "INSERT INTO newsletter(newName, newEmail)
+                VALUES('$newName', $newEmail)";
+    
+    //Feedback if data has been inserted
+        if(mysqli_query($conn, $sql)){
+            echo '<script>alert("Your details have been captured. We will keep you updated on news and reports.")</script>';
+        }
+        else{
+            echo '<script>alert("Error: Information was not captured well. Try again later")</script>';
+            
+        }
+    }
+    }
+?>
+
 </body>
 
 </html>
