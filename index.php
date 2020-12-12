@@ -19,7 +19,7 @@
                 <ul>
                     <li id="first"><a href="report.php">Report Criminal Content</a><i class="fa fa-angle-right"></i></li>
 
-                    <li id="second"><a href="fnfn.html">Support</a><i class="fa fa-angle-right"></i></li>
+                    <li id="second"><a href="support.php">Support</a><i class="fa fa-angle-right"></i></li>
                 </ul>
             </div>
         </div>
