@@ -147,10 +147,10 @@
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="reset.html">password?</a></span>
+            <span class="psw">Forgot <a href="reset.php">password?</a></span>
         </div>
         <div class="container" style="background-color:#f1f1f1">
-            <span class="account">Don't have an account? <a href="sign.html">SignUp</a></span>
+            <span class="account">Don't have an account? <a href="sign.php">SignUp</a></span>
         </div>
     
 

@@ -26,10 +26,10 @@
 
         <div class="menubar">
             <ul>
-                <li><a href="index.html">About us</a></li>
-                <li><a href="index.html">Contact us</a></li>
-                <li><a href="index.html">Our services</a></li>
-                <li><i class="fa fa-user"></i><a href="index.html">Login<i class="fa fa-angle-down"></i></a>
+                <li><a href="aboutus.php">About us</a></li>
+                <li><a href="contact.php">Contact us</a></li>
+                <li><a href="services.php">Our services</a></li>
+                <li><i class="fa fa-user"></i><a href="login1.php">LOGIN<i class="fa fa-angle-down"></i></a>
                     <ul>
                         <li><a href="login1.php">LOGIN</a></li>
                     </ul>
@@ -46,7 +46,7 @@
         <img src="img/fingerprint.png">
         <div class="content">
             <p>You can easily report any crime <br/>and we will reach out to you asap</p>
-            <h2>Report Criminal Content<i class="fa fa-angle-right"></i></h2>
+            <h2><a href="report.php"> Report Criminal Content</a><i class="fa fa-angle-right"></i></h2>
         </div>
     </div>
 
